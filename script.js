@@ -10,10 +10,9 @@ const cardsArray = [
 ];
 
 const memoryGame = document.getElementById('memoryGame');
-let matchedPairs = 0; // Variable para contar pares encontrados
-const totalPairs = cardsArray.length / 2; // Número total de pares a encontrar
+let matchedPairs = 0; 
+const totalPairs = cardsArray.length / 2; 
 
-// Mezclar las tarjetas
 const shuffledCards = shuffle(cardsArray);
 
 shuffledCards.forEach(card => {
@@ -87,7 +86,6 @@ function shuffle(array) {
   return array.sort(() => Math.random() - 0.5);
 }
 
-// Reiniciar el juego
 document.getElementById('reset').addEventListener('click', () => {
   memoryGame.innerHTML = '';
   const shuffled = shuffle(cardsArray);
@@ -101,6 +99,6 @@ document.getElementById('reset').addEventListener('click', () => {
     memoryGame.appendChild(cardElement);
     cardElement.addEventListener('click', flipCard);
   });
-  matchedPairs = 0; // Reiniciar el contador de pares encontrados
+  matchedPairs = 0; 
   resetBoard();
 });
